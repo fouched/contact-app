@@ -1,0 +1,26 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Company>
+ */
+class CompanyFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition()
+    {
+        return [
+            'name' => fake()->company(), // assign array prop and new var at same time
+            'address' => fake()->address(),
+            'website' => fake()->url(),
+            'email' => fake()->email(),
+        ];
+    }
+}
