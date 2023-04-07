@@ -9,7 +9,6 @@
                 <h1 class="border-bottom p-4">Reset Password</h1>
 
                 <div class="px-4 py-4">
-
                     @if($message = session('status'))
                         <div class="alert alert-success">{{ $message }}</div>
                     @endif
