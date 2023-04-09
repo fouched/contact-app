@@ -4,6 +4,7 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Settings\PasswordController;
 use App\Http\Controllers\Settings\ProfileController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\TaskController;
@@ -26,6 +27,7 @@ Route::get('/', WelcomeController::class)->name('home');
 Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
     Route::get('/settings/profile-information', ProfileController::class)->name('user-profile-information.edit');
+    Route::get('/settings/password', PasswordController::class)->name('user-password.edit');
     Route::controller(ContactController::class)->group(function () {
         Route::get('/contacts', 'index')->name('contacts.index');
         Route::post('/contacts', 'store')->name('contacts.store');
